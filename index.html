@@ -11,8 +11,8 @@
             padding: 0;
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f6f9;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f6f8;
             color: #222;
             display: flex;
             flex-direction: column;
@@ -20,154 +20,103 @@
         }
         header {
             background-color: #ffffff;
-            border-bottom: 4px solid #006644;
-            padding: 16px 24px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 20px 24px;
             text-align: center;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            border-bottom: 3px solid #1b5e20;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
         }
-        .logo-container img {
-            max-height: 100px;
-            width: auto;
-            margin-bottom: 10px;
+        .logo {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 14px;
+            display: inline-block;
         }
-        .header-title {
-            font-size: 1.5rem;
+        h1 {
+            font-size: 1.45rem;
             font-weight: 700;
-            color: #1a3a2f;
-            letter-spacing: 0.3px;
+            color: #1f2937;
+            letter-spacing: 0.2px;
         }
-        .toolbar {
-            background-color: #1a3a2f;
-            color: #ffffff;
-            padding: 10px 24px;
+        .actions {
+            margin-top: 12px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: center;
+            gap: 10px;
             flex-wrap: wrap;
-            gap: 10px;
-        }
-        .doc-name {
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-        .toolbar-actions {
-            display: flex;
-            gap: 10px;
         }
         .btn {
-            background-color: #00885a;
-            color: #ffffff;
-            text-decoration: none;
+            display: inline-block;
             padding: 8px 16px;
-            border-radius: 5px;
             font-size: 0.9rem;
             font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
             transition: background-color 0.2s ease;
         }
-        .btn:hover {
-            background-color: #006644;
+        .btn-primary {
+            background-color: #1b5e20;
+            color: #ffffff;
+        }
+        .btn-primary:hover {
+            background-color: #144718;
         }
         .btn-secondary {
-            background-color: #2c5e4c;
+            background-color: #e5e7eb;
+            color: #1f2937;
         }
         .btn-secondary:hover {
-            background-color: #214739;
+            background-color: #d1d5db;
         }
         main {
             flex: 1;
+            width: 100%;
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 0 16px;
             display: flex;
             flex-direction: column;
-            padding: 20px;
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
         }
-        .pdf-wrapper {
+        .pdf-container {
             flex: 1;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
+            width: 100%;
             min-height: 75vh;
-            display: flex;
-            flex-direction: column;
+            background-color: #ffffff;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
-        iframe, object {
+        iframe {
             width: 100%;
-            height: 78vh;
+            height: 75vh;
             border: none;
-            flex: 1;
+            display: block;
         }
         .fallback-msg {
-            padding: 32px 24px;
+            padding: 24px;
             text-align: center;
-            color: #444;
-            line-height: 1.6;
-        }
-        .fallback-msg a {
-            color: #006644;
-            font-weight: 600;
-        }
-        footer {
-            text-align: center;
-            padding: 12px;
-            font-size: 0.85rem;
-            color: #666;
-            background-color: #ffffff;
-            border-top: 1px solid #e0e0e0;
-        }
-        @media (max-width: 600px) {
-            .header-title {
-                font-size: 1.2rem;
-            }
-            .logo-container img {
-                max-height: 75px;
-            }
-            main {
-                padding: 12px;
-            }
-            iframe, object {
-                height: 70vh;
-            }
         }
     </style>
 </head>
 <body>
-
     <header>
-        <div class="logo-container">
-            <img src="logo.jpg" alt="Makassed Philanthropic Islamic Association of Beirut Logo">
+        <img src="./logo.jpg" alt="Makassed Philanthropic Islamic Association of Beirut" class="logo">
+        <h1>Mathematics General Coordinator: Bassam Itani 2026-2027</h1>
+        <div class="actions">
+            <a href="./mail%20erdc.pdf" target="_blank" rel="noopener" class="btn btn-primary">Open PDF in New Tab</a>
+            <a href="./mail%20erdc.pdf" download="mail erdc.pdf" class="btn btn-secondary">Download PDF</a>
         </div>
-        <h1 class="header-title">Mathematics General Coordinator: Bassam Itani 2026-2027</h1>
     </header>
-
-    <div class="toolbar">
-        <span class="doc-name">Document: mail erdc.pdf</span>
-        <div class="toolbar-actions">
-            <a href="mail%20erdc.pdf" target="_blank" class="btn btn-secondary">Open in New Tab</a>
-            <a href="mail%20erdc.pdf" download="mail erdc.pdf" class="btn">Download PDF</a>
-        </div>
-    </div>
-
     <main>
-        <div class="pdf-wrapper">
-            <object data="mail%20erdc.pdf" type="application/pdf">
-                <iframe src="mail%20erdc.pdf" title="mail erdc.pdf">
-                    <div class="fallback-msg">
-                        <p>Your browser does not support inline PDF viewing.</p>
-                        <p><a href="mail%20erdc.pdf" target="_blank">Click here to open or download mail erdc.pdf</a>.</p>
-                    </div>
-                </iframe>
-            </object>
+        <div class="pdf-container">
+            <iframe src="./mail%20erdc.pdf#view=FitH" title="mail erdc.pdf">
+                <div class="fallback-msg">
+                    <p>Your browser does not support inline PDF viewing.</p>
+                    <p><a href="./mail%20erdc.pdf">Click here to open or download mail erdc.pdf</a>.</p>
+                </div>
+            </iframe>
         </div>
     </main>
-
-    <footer>
-        Makassed Philanthropic Islamic Association of Beirut &bull; Academic Year 2026-2027
-    </footer>
-
 </body>
 </html>
